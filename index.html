@@ -100,8 +100,13 @@
 
       //withdraw
       const withdraw = document.getElementById("withdraw");
-      deposit.addEventListener("click", () => {
+      withdraw.addEventListener("click", () => {
         const withNumber = getInputNumber("withdraw-ammount");
+        console.log(withNumber);
+        updateSpanText("current-withdraw", withNumber);
+        updateSpanText("current-balance", -1 * withNumber);
+
+        document.getElementById("withdraw-ammount").value = "";
       });
       function getInputNumber(id) {
         const amount = document.getElementById(id).value;
